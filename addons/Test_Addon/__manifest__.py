@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Travel Agency Module",
+    'name': "Test Module",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -21,8 +21,6 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
-    "init_xml" : [],
-    "update_xml" : ["travel_view.xml"],
 
     # always loaded
     'data': [
