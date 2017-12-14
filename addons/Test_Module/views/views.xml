@@ -16,14 +16,53 @@
     -->
 
     <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="travel.action_window">
-      <field name="name">travel window</field>
-      <field name="res_model">travel.travel</field>
+    <record model="ir.actions.act_window" id="tests_action_window">
+      <field name="name">Tests</field>
+      <field name="res_model">test.model</field>
       <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
     </record>
-    -->
 
+    <record model="ir.actions.act_window" id="tests_sessions_action_window">
+      <field name="name">Test sessions</field>
+      <field name="res_model">test.session</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_type">form</field>
+    </record>
+
+    <record model="ir.ui_view" id="tests_list_action">
+      <field name="name">Tests</field>
+      <field name="res_model">lbs_test.test</field>
+      <field name="view_type">form</field>
+     <field name="view_mode">tree,form</field>
+    </record>
+
+      <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Subtasks">
+                        <field name="subtask_ids">
+                            <tree string="Registered subtasks">
+                                <field name="name"/>
+                                <field name="description"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+  <record model="ir.actions.act_window" id="task_list_action">
+            <field name="name">Tasks</field>
+            <field name="res_model">project.task</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="project_menu" name="Project"
+                  parent="main_lbs_test_menu"/>
+        <menuitem id="task_menu" name="Tasks"
+                  parent="project_menu"
+                  action="task_list_action"/>
     <!-- server action to the one above -->
     <!--
     <record model="ir.actions.server" id="travel.action_server">
@@ -40,19 +79,16 @@
     -->
 
     <!-- Top menu item -->
-    <!--
-    <menuitem name="travel" id="travel.menu_root"/>
-    <menuitem name="Test" id="travel.menu_root"/>
+    <menuitem name="Main Test Menu" id="main_test_menu"/>
+
     -->
     <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="travel.menu_1" parent="travel.menu_root"/>
-    <menuitem name="Menu 2" id="travel.menu_2" parent="travel.menu_root"/>
-    <menuitem name="Menu Test" id="travel.menu_3" parent="travel.menu_root"/>
+    <menuitem name="Tests" id="tests_menu" parent="main_test_menu"/>
+    <menuitem name="Test Sessions" id="test_sessions_menu" parent="main_test_menu"/>
     -->
     <!-- actions -->
     <!--
-    <menuitem name="List" id="travel.menu_1_list" parent="travel.menu_1"
+    <menuitem name="Tests" id="tests.menu_list" parent="test_sessions.menu"
               action="travel.action_window"/>
     <menuitem name="Server to list" id="travel" parent="travel.menu_2"
               action="travel.action_server"/>
