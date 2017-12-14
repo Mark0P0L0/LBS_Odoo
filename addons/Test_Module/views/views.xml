@@ -42,11 +42,13 @@
     <!-- Top menu item -->
     <!--
     <menuitem name="travel" id="travel.menu_root"/>
+    <menuitem name="Test" id="travel.menu_root"/>
     -->
     <!-- menu categories -->
     <!--
     <menuitem name="Menu 1" id="travel.menu_1" parent="travel.menu_root"/>
     <menuitem name="Menu 2" id="travel.menu_2" parent="travel.menu_root"/>
+    <menuitem name="Menu Test" id="travel.menu_3" parent="travel.menu_root"/>
     -->
     <!-- actions -->
     <!--
