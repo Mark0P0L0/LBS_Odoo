@@ -1,0 +1,56 @@
+# coding=UTF-8
+memo=[] 
+s = int(input("Введите количество записей: "))
+
+for i in range (s):
+    x = (input("Введите имя и фамилию,пол,возраст. \n")).split(',')
+    memo.insert(0, x)
+    memo[0][2] = int(memo[0][2])
+  
+    if memo[0][1] is 'm':
+        memo[0][0]= "Mr "+ memo[0][0]
+    else:
+        memo[0][0]= "Mrs "+ memo[0][0]
+    i+=1
+memo.sort()
+memo_lst = memo[0][0], memo[1][0], memo[2][0]
+print(*memo_lst, sep='\n')
+
+
+Альтернативный вариант:
+
+# coding=UTF-8
+memo = []
+
+data_source = int(input("Please choose input method: 1)Keyboard 2)From file "))
+if data_source is 1:
+    s = int(input("Введите количество записей: "))
+elif data_source is 2:
+    x = open("/home/mark/Desktop/Odoo Course/test.txt", "r").readlines()
+else:
+    print("Неверный выбор")
+
+    for i in x:
+        memo.insert(0, x).append(i.strip('\n')).split(',')
+        memo[0][2] = Int(memo[0][2]
+
+    if memo[0][1] is 'm':
+        memo[0][0] = "Mr " + memo[0][0]
+    else:
+        memo[0][0] = "Mrs " + memo[0][0]
+    i += 1
+
+for i in range(s):
+    x = (input("Введите имя и фамилию,пол,возраст. \n")).split(',')
+
+    memo.insert(0, x)
+    memo[0][2] = int(memo[0][2])
+    if memo[0][1] is 'm':
+        memo[0][0] = "Mr " + memo[0][0]
+    else:
+        memo[0][0] = "Mrs " + memo[0][0]
+    i += 1
+
+memo = memo.sort()
+memo_lst = memo[0][0], memo[1][0], memo[2][0]
+print(*memo_lst, sep='\n')
